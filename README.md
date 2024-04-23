@@ -19,30 +19,80 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
+def search(array,key,n):
+    for i in range(0,n):
+        if key==array[i]:
+            return i;
+         
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+n=len(array)
+print(array)
+result=search(array,key,n) 
+if result==-1:
+    print("Element not found");
+else:
+    print("Element found at index: ",search(array,key,n))
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+def binary(array,key,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            low=mid+1
+        elif array[mid]>key:
+            high=mid-1
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",binary(array,key,low,high))
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
+def binary(array,key,low,high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            return  binary(array,key,mid+1,high)
+        elif array[mid]>key:
+             return binary(array,key,low,mid-1)
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",binary(array,key,low,high))
 
 ```
 ## Sample Input and Output
+linear search:
+![Screenshot 2024-04-23 114047](https://github.com/PRAJAN-23013995/Search-Algorithms/assets/150313345/4eed431a-5efd-43a9-ac6b-34c81750c2a1)
 
+Binary search(Iterative method):
+![Screenshot 2024-04-23 114111](https://github.com/PRAJAN-23013995/Search-Algorithms/assets/150313345/1161c57f-81ce-4d35-835c-8abb09259c6f)
 
-
+Binary search(Recursive method):
+![Screenshot 2024-04-23 114531](https://github.com/PRAJAN-23013995/Search-Algorithms/assets/150313345/8ba766f2-b375-476c-9e1a-3141d936eedb)
 
 
 
